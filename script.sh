@@ -10,6 +10,6 @@ echo "###############################################################
 #  Disconnect IMMEDIATELY if you are not an authorized user!  #
 ###############################################################
 " > welcome
-cat /home/ubuntu/welcome | sudo tee -a /etc/issue.net > /dev/null
+cat /home/azureuser/welcome | sudo tee -a /etc/issue.net > /dev/null
 echo 'Banner /etc/issue.net' | sudo tee -a /etc/ssh/sshd_config > /dev/null
 sudo systemctl restart ssh.service
