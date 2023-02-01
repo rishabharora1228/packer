@@ -24,10 +24,10 @@ stages:
         customTemplateLocation: 'packer.json'
         customTemplateParameters: '{"ADOServicePrincipalAppId":"$(ADOAppID)","ADOServicePrincipalSecret":"$(ADOAppSecret)","TenantId":"$(TenantId)","SubscriptionId":"$(SubscriptionId)","ImageDestRG":"$(ImageDestRG)","TempResourceGroup":"$(TempResourceGroup)","VirtualNetwork":"$(VirtualNetwork)","VirtualNetworkRG":"$(VirtualNetworkRG)","Subnet":"$(Subnet)","Location":"$(Location)","VMSize":"$(VMSize)","StorageAccountInstallersName":"$(StorageAccountName)","StorageAccountInstallersKey":"$(StorageAccountKey)","StorageAccountInstallersPath":"$(StorageAccountInstallersPath)"}'
         imageUri: BuildImage
-    - task: nkdagility.variablehydration.variabledehydration-task.variabledehydration@0
-      displayName: 'Save Build Variables: BuildImage'
-      inputs:
-        prefixes: BuildImage
+    # - task: nkdagility.variablehydration.variabledehydration-task.variabledehydration@0
+    #   displayName: 'Save Build Variables: BuildImage'
+    #   inputs:
+    #     prefixes: BuildImage
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact: Build Image and associated Template'
       inputs:
