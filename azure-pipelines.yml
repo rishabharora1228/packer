@@ -5,12 +5,12 @@ variables:
   - group: packer-image-build-variables
 
 
-jobs:
-    - task: PackerBuild@1
-      displayName: 'Build Image'
-      inputs:
-        templateType: custom
-        customTemplateLocation: 'packer.json'
-        customTemplateParameters: '{"ADOServicePrincipalAppId":"$(ADOAppID)","ADOServicePrincipalSecret":"$(ADOAppSecret)","TenantId":"$(TenantId)","SubscriptionId":"$(SubscriptionId)","ImageDestRG":"$(ImageDestRG)","TempResourceGroup":"$(TempResourceGroup)","VirtualNetwork":"$(VirtualNetwork)","VirtualNetworkRG":"$(VirtualNetworkRG)","Subnet":"$(Subnet)","Location":"$(Location)","VMSize":"$(VMSize)","StorageAccountInstallersName":"$(StorageAccountName)","StorageAccountInstallersKey":"$(StorageAccountKey)","StorageAccountInstallersPath":"$(StorageAccountInstallersPath)"}'
-        imageUri: BuildImage
+
+- task: PackerBuild@1
+  displayName: 'Build Image'
+  inputs:
+    templateType: custom
+    customTemplateLocation: 'packer.json'
+    customTemplateParameters: '{"ADOServicePrincipalAppId":"$(ADOAppID)","ADOServicePrincipalSecret":"$(ADOAppSecret)","TenantId":"$(TenantId)","SubscriptionId":"$(SubscriptionId)","ImageDestRG":"$(ImageDestRG)","TempResourceGroup":"$(TempResourceGroup)","VirtualNetwork":"$(VirtualNetwork)","VirtualNetworkRG":"$(VirtualNetworkRG)","Subnet":"$(Subnet)","Location":"$(Location)","VMSize":"$(VMSize)","StorageAccountInstallersName":"$(StorageAccountName)","StorageAccountInstallersKey":"$(StorageAccountKey)","StorageAccountInstallersPath":"$(StorageAccountInstallersPath)"}'
+    imageUri: BuildImage
 
