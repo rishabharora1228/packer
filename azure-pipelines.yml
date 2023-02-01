@@ -4,10 +4,8 @@ variables:
   - group: keyvault-image-build-variables
   - group: packer-image-build-variables
 
-stages:
-- stage: imagr
-  displayName: linux
-  jobs:
+
+jobs:
     - task: PackerBuild@1
       displayName: 'Build Image'
       inputs:
